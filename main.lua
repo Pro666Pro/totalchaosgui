@@ -73,15 +73,14 @@ Scripts:AddButton({
 })
 
 _G.OnAbility = false
-Scripts:AddToggle({
+Tab7:AddToggle({
 	Name = "make it rain",
 	Default = false,
 	Callback = function(Value)
-			_G.OnAbility = Value
+		_G.OnAbility = Value
 while _G.OnAbility and game.Players.LocalPlayer.leaderstats.Glove.Value == "Meteor" do
 game:GetService("ReplicatedStorage"):WaitForChild("GeneralAbility"):FireServer()
-wait(1)
+wait(3)
 end
 	 end
 })
-
