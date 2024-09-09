@@ -68,10 +68,11 @@ Scripts:AddButton({
 Scripts:AddButton({
 	Name = "equip meteor",
 	Callback = function()
-fireclickdetector(workspace.Lobby["Meteor"].ClickDetector)
+	fireclickdetector(workspace.Lobby["Meteor"].ClickDetector)
 	 end
 })
 
+_G.OnAbility = false
 Scripts:AddToggle({
 	Name = "make it rain",
 	Default = false,
@@ -79,7 +80,8 @@ Scripts:AddToggle({
 			_G.OnAbility = Value
 while _G.OnAbility and game.Players.LocalPlayer.leaderstats.Glove.Value == "Meteor" do
 game:GetService("ReplicatedStorage"):WaitForChild("GeneralAbility"):FireServer()
-wait(3)
+wait(1)
+end
 	 end
 })
 
