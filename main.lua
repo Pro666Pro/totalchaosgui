@@ -84,27 +84,3 @@ wait(0.01)
 end
 	 end
 })
-
-Scripts:AddButton({
-	Name = "equip track",
-	Callback = function()
-	fireclickdetector(workspace.Lobby["Track"].ClickDetector)
-	 end
-})
-
-_G.OnAbility2 = false
-Scripts:AddToggle({
-	Name = "serial killer { track required }",
-	Default = false,
-	Callback = function(Value)
-		_G.OnAbility2 = Value
-while _G.OnAbility2 and game.Players.LocalPlayer.leaderstats.Glove.Value == "Track" do
-local players = game.Players:GetChildren()
-local RandomPlayer = players[math.random(1, #players)]
-repeat RandomPlayer = players[math.random(1, #players)] until RandomPlayer ~= game.Players.LocalPlayer and RandomPlayer.Character:FindFirstChild("entered") and RandomPlayer.Character:FindFirstChild("rock") == nil
-Target = RandomPlayer
-game:GetService("ReplicatedStorage").GeneralAbility:FireServer(Target.Character)
-wait(3)
-end
-	 end
-})
